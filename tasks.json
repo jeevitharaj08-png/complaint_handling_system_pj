@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: Build Complaint Handling System (GCC)",
+            "command": "gcc",
+            "args": [
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-Wpedantic",
+                "-g",
+                "-Iinclude",
+                "src/*.c",
+                "-o",
+                "${workspaceFolder}/bin/complaint_system.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Task generated to compile Complaint System using GCC on Windows/MinGW."
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: Build with Makefile",
+            "command": "make",
+            "args": [
+                "all"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "C/C++: Run Automated Tests",
+            "command": "gcc -std=c11 -Wall -Wextra -Wpedantic -g -Iinclude src/utils.c src/customer.c src/agent.c src/complaint.c src/search.c src/report.c src/storage.c src/audit.c tests/test_runner.c -o ${workspaceFolder}/bin/test_runner.exe; ${workspaceFolder}/bin/test_runner.exe",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "test"
+        }
+    ]
+}
